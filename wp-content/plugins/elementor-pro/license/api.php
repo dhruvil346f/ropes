@@ -25,7 +25,6 @@ class API {
 	 * @return \stdClass|\WP_Error
 	 */
 	private static function remote_post( $body_args = [] ) {
-		return ['license' => 'valid', 'expires' => 'lifetime',	'subscriptions', 'enable', 'renewal_discount','',];
 		$body_args = wp_parse_args(
 			$body_args,
 			[

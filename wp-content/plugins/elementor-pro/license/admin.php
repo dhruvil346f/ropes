@@ -150,7 +150,7 @@ class Admin {
 	public function display_page() {
 		$license_key = self::get_license_key();
 
-		$is_manual_mode = true;
+		$is_manual_mode = ( isset( $_GET['mode'] ) && 'manually' === $_GET['mode'] );
 
 		if ( $is_manual_mode ) {
 			$this->render_manually_activation_widget( $license_key );
@@ -176,7 +176,7 @@ class Admin {
 						</a>
 					</div>
 				<?php else :
-					$license_data = API::get_license_data( true ); ?>
+					$license_data = API::get_license_data(); ?>
 					<h3><?php _e( 'Status', 'elementor-pro' ); ?>:
 						<?php if ( API::STATUS_EXPIRED === $license_data['license'] ) : ?>
 							<span style="color: #ff0000; font-style: italic;"><?php _e( 'Expired', 'elementor-pro' ); ?></span>
@@ -447,10 +447,10 @@ class Admin {
 
 					<input type="submit" class="button button-primary" value="<?php esc_attr_e( 'Activate', 'elementor-pro' ); ?>"/>
 
-					<p class="description"><?php printf( __( 'Your license key should look something like this: %s', 'elementor-pro' ), '<code>GWP7514519919615182316RL</code>' ); ?></p>
+					<p class="description"><?php printf( __( 'Your license key should look something like this: %s', 'elementor-pro' ), '<code>fb351f05958872E193feb37a505a84be</code>' ); ?></p>
 
 				<?php else :
-					$license_data = API::get_license_data( true ); ?>
+					$license_data = API::get_license_data(); ?>
 					<input type="hidden" name="action" value="elementor_pro_deactivate_license"/>
 
 					<label for="elementor-pro-license-key"><?php _e( 'Your License Key', 'elementor-pro' ); ?>:</label>

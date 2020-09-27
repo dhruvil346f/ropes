@@ -4,7 +4,7 @@
  * Description: Elementor Pro brings a whole new design experience to WordPress. Customize your entire theme: header, footer, single post, archive and 404 page, all with one page builder.
  * Plugin URI: https://elementor.com/
  * Author: Elementor.com
- * Version: 3.0.4
+ * Version: 3.0.5
  * Author URI: https://elementor.com/
  *
  * Text Domain: elementor-pro
@@ -14,7 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-define( 'ELEMENTOR_PRO_VERSION', '3.0.4' );
+update_option( 'elementor_pro_license_key', 'activated' );
+update_option( '_elementor_pro_license_data', [ 'timeout' => strtotime( '+12 hours', current_time( 'timestamp' ) ), 'value' => json_encode( [ 'license' => 'valid', 'expires' => '01.01.2030' ] ) ] );
+
+define( 'ELEMENTOR_PRO_VERSION', '3.0.5' );
 define( 'ELEMENTOR_PRO_PREVIOUS_STABLE_VERSION', '2.10.3' );
 
 define( 'ELEMENTOR_PRO__FILE__', __FILE__ );
@@ -25,8 +28,6 @@ define( 'ELEMENTOR_PRO_MODULES_PATH', ELEMENTOR_PRO_PATH . 'modules/' );
 define( 'ELEMENTOR_PRO_URL', plugins_url( '/', ELEMENTOR_PRO__FILE__ ) );
 define( 'ELEMENTOR_PRO_ASSETS_URL', ELEMENTOR_PRO_URL . 'assets/' );
 define( 'ELEMENTOR_PRO_MODULES_URL', ELEMENTOR_PRO_URL . 'modules/' );
-update_option( 'elementor_pro_license_key', 'GWP7514519919615182316RL' );
-update_option( '_elementor_pro_license_data', [ 'timeout' => strtotime( '+12 hours', current_time( 'timestamp' ) ),'value' => json_encode( [ 'license' => 'valid', 'expires' => 'lifetime','renewal_discount' => '', 'subscriptions' => 'enable' ] ) ] );
 
 /**
  * Load gettext translate for our text domain.
