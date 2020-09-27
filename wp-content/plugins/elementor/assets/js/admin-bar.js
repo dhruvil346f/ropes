@@ -82,7 +82,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 787);
+/******/ 	return __webpack_require__(__webpack_require__.s = 714);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -279,6 +279,13 @@ module.exports = function (object, names) {
   return result;
 };
 
+
+/***/ }),
+
+/***/ 117:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(183);
 
 /***/ }),
 
@@ -1182,6 +1189,124 @@ __webpack_require__(73)('observable');
 
 /***/ }),
 
+/***/ 181:
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(14);
+var getKeys = __webpack_require__(36);
+var toIObject = __webpack_require__(19);
+var isEnum = __webpack_require__(46).f;
+module.exports = function (isEntries) {
+  return function (it) {
+    var O = toIObject(it);
+    var keys = getKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || isEnum.call(O, key)) {
+        result.push(isEntries ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
+  };
+};
+
+
+/***/ }),
+
+/***/ 183:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(184);
+var $Object = __webpack_require__(6).Object;
+module.exports = function getOwnPropertyDescriptor(it, key) {
+  return $Object.getOwnPropertyDescriptor(it, key);
+};
+
+
+/***/ }),
+
+/***/ 184:
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+var toIObject = __webpack_require__(19);
+var $getOwnPropertyDescriptor = __webpack_require__(51).f;
+
+__webpack_require__(78)('getOwnPropertyDescriptor', function () {
+  return function getOwnPropertyDescriptor(it, key) {
+    return $getOwnPropertyDescriptor(toIObject(it), key);
+  };
+});
+
+
+/***/ }),
+
+/***/ 185:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(186);
+
+/***/ }),
+
+/***/ 186:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(187);
+module.exports = __webpack_require__(6).Reflect.get;
+
+
+/***/ }),
+
+/***/ 187:
+/***/ (function(module, exports, __webpack_require__) {
+
+// 26.1.6 Reflect.get(target, propertyKey [, receiver])
+var gOPD = __webpack_require__(51);
+var getPrototypeOf = __webpack_require__(63);
+var has = __webpack_require__(17);
+var $export = __webpack_require__(7);
+var isObject = __webpack_require__(9);
+var anObject = __webpack_require__(11);
+
+function get(target, propertyKey /* , receiver */) {
+  var receiver = arguments.length < 3 ? target : arguments[2];
+  var desc, proto;
+  if (anObject(target) === receiver) return target[propertyKey];
+  if (desc = gOPD.f(target, propertyKey)) return has(desc, 'value')
+    ? desc.value
+    : desc.get !== undefined
+      ? desc.get.call(receiver)
+      : undefined;
+  if (isObject(proto = getPrototypeOf(target))) return get(proto, propertyKey, receiver);
+}
+
+$export($export.S, 'Reflect', { get: get });
+
+
+/***/ }),
+
+/***/ 188:
+/***/ (function(module, exports, __webpack_require__) {
+
+var getPrototypeOf = __webpack_require__(16);
+
+function _superPropBase(object, property) {
+  while (!Object.prototype.hasOwnProperty.call(object, property)) {
+    object = getPrototypeOf(object);
+    if (object === null) break;
+  }
+
+  return object;
+}
+
+module.exports = _superPropBase;
+
+/***/ }),
+
 /***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1234,6 +1359,65 @@ module.exports = __webpack_require__(14) ? function (object, key, value) {
   return object;
 };
 
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(227);
+module.exports = __webpack_require__(6).Object.values;
+
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/tc39/proposal-object-values-entries
+var $export = __webpack_require__(7);
+var $values = __webpack_require__(181)(false);
+
+$export($export.S, 'Object', {
+  values: function values(it) {
+    return $values(it);
+  }
+});
+
+
+/***/ }),
+
+/***/ 24:
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$getOwnPropertyDescriptor = __webpack_require__(117);
+
+var _Reflect$get = __webpack_require__(185);
+
+var superPropBase = __webpack_require__(188);
+
+function _get(target, property, receiver) {
+  if (typeof Reflect !== "undefined" && _Reflect$get) {
+    module.exports = _get = _Reflect$get;
+  } else {
+    module.exports = _get = function _get(target, property, receiver) {
+      var base = superPropBase(target, property);
+      if (!base) return;
+
+      var desc = _Object$getOwnPropertyDescriptor(base, property);
+
+      if (desc.get) {
+        return desc.get.call(receiver);
+      }
+
+      return desc.value;
+    };
+  }
+
+  return _get(target, property, receiver || target);
+}
+
+module.exports = _get;
 
 /***/ }),
 
@@ -1575,6 +1759,13 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ 56:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(226);
+
+/***/ }),
+
 /***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1820,6 +2011,190 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ 714:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(0);
+
+var _values = _interopRequireDefault(__webpack_require__(56));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(3));
+
+var _get2 = _interopRequireDefault(__webpack_require__(24));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(16));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(4));
+
+var _createSuper2 = _interopRequireDefault(__webpack_require__(5));
+
+/* global elementorAdminBarConfig, jQuery */
+var AdminBar = /*#__PURE__*/function (_elementorModules$Vie) {
+  (0, _inherits2.default)(AdminBar, _elementorModules$Vie);
+
+  var _super = (0, _createSuper2.default)(AdminBar);
+
+  function AdminBar() {
+    (0, _classCallCheck2.default)(this, AdminBar);
+    return _super.apply(this, arguments);
+  }
+
+  (0, _createClass2.default)(AdminBar, [{
+    key: "getDefaultSettings",
+
+    /**
+     * @returns {{}}
+     */
+    value: function getDefaultSettings() {
+      return {
+        prefixes: {
+          adminBarId: 'wp-admin-bar-'
+        },
+        classes: {
+          adminBarItem: 'ab-item',
+          adminBarItemTitle: 'elementor-edit-link-title',
+          adminBarItemSubTitle: 'elementor-edit-link-type',
+          adminBarNonLinkItem: 'ab-empty-item',
+          adminBarSubItemsWrapper: 'ab-sub-wrapper',
+          adminBarSubItems: 'ab-submenu'
+        },
+        selectors: {
+          adminBar: '#wp-admin-bar-root-default',
+          editMenuItem: '#wp-admin-bar-edit',
+          newMenuItem: '#wp-admin-bar-new-content'
+        }
+      };
+    }
+    /**
+     * @returns {{$adminBar: (jQuery)}}
+     */
+
+  }, {
+    key: "getDefaultElements",
+    value: function getDefaultElements() {
+      var _this$getSettings = this.getSettings('selectors'),
+          adminBar = _this$getSettings.adminBar,
+          editMenuItem = _this$getSettings.editMenuItem,
+          newMenuItem = _this$getSettings.newMenuItem;
+
+      return {
+        $adminBar: jQuery(adminBar),
+        $editMenuItem: jQuery(editMenuItem),
+        $newMenuItem: jQuery(newMenuItem)
+      };
+    }
+    /**
+     * Init
+     */
+
+  }, {
+    key: "onInit",
+    value: function onInit() {
+      (0, _get2.default)((0, _getPrototypeOf2.default)(AdminBar.prototype), "onInit", this).call(this);
+      this.createMenu(elementorAdminBarConfig);
+    }
+    /**
+     * Main method that creates the menu base on the config that provided.
+     *
+     * @param adminBarConfig
+     */
+
+  }, {
+    key: "createMenu",
+    value: function createMenu(adminBarConfig) {
+      var $items = this.createMenuItems((0, _values.default)(adminBarConfig));
+
+      if (this.elements.$editMenuItem.length) {
+        // This is the normal case, when user visit a preview page of single post.
+        this.elements.$editMenuItem.after($items);
+      } else if (this.elements.$newMenuItem) {
+        // This is another case, when user visit a preview page that cannot be edited e.g: archive page.
+        this.elements.$newMenuItem.after($items);
+      } else {
+        // Default fallback in case there are no "new" or "edit" button.
+        this.elements.$adminBar.append($items);
+      }
+    }
+    /**
+     * Creates a menu items from array of declaration.
+     *
+     * @param items
+     * @returns {jQuery[]}
+     */
+
+  }, {
+    key: "createMenuItems",
+    value: function createMenuItems(items) {
+      var _this = this;
+
+      return items.map(function (item) {
+        return _this.createMenuItem(item);
+      });
+    }
+    /**
+     * Creates a menu item, both for menu and sub menu.
+     *
+     * @param item
+     * @returns {jQuery}
+     */
+
+  }, {
+    key: "createMenuItem",
+    value: function createMenuItem(item) {
+      var children = item.children ? (0, _values.default)(item.children) : [];
+      var id = "".concat(this.getSettings('prefixes.adminBarId')).concat(item.id);
+      var $title = jQuery('<span>', {
+        class: this.getSettings('classes.adminBarItemTitle'),
+        html: item.title
+      });
+      var $subTitle = item.sub_title ? jQuery('<span>', {
+        class: this.getSettings('classes.adminBarItemSubTitle'),
+        html: item.sub_title
+      }) : null;
+      var $item = jQuery(item.href ? '<a>' : '<div>', {
+        'aria-haspopup': children.length ? true : null,
+        class: [this.getSettings('classes.adminBarItem'), item.href ? '' : this.getSettings('classes.adminBarNonLinkItem'), item.class].join(' '),
+        href: item.href
+      }).append([$title, $subTitle]);
+      return jQuery('<li>', {
+        id: id,
+        class: children.length ? 'menupop' : ''
+      }).append([$item, children.length ? this.createSubMenuItems(id, children) : null]);
+    }
+    /**
+     * Creates sub menu items wrapper.
+     *
+     * @param parentId
+     * @param children
+     * @returns {jQuery}
+     */
+
+  }, {
+    key: "createSubMenuItems",
+    value: function createSubMenuItems(parentId, children) {
+      var $list = jQuery('<ul>', {
+        class: this.getSettings('classes.adminBarSubItems'),
+        id: "".concat(parentId, "-default")
+      }).append(this.createMenuItems(children));
+      return jQuery('<div>', {
+        class: this.getSettings('classes.adminBarSubItemsWrapper')
+      }).append($list);
+    }
+  }]);
+  return AdminBar;
+}(elementorModules.ViewModule);
+
+jQuery(function () {
+  return new AdminBar();
+});
+
+/***/ }),
+
 /***/ 72:
 /***/ (function(module, exports) {
 
@@ -1932,273 +2307,6 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ 787:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(3));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(4));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(5));
-
-var _layout = _interopRequireDefault(__webpack_require__(788));
-
-var BetaTesterModule = /*#__PURE__*/function (_elementorModules$Vie) {
-  (0, _inherits2.default)(BetaTesterModule, _elementorModules$Vie);
-
-  var _super = (0, _createSuper2.default)(BetaTesterModule);
-
-  function BetaTesterModule() {
-    (0, _classCallCheck2.default)(this, BetaTesterModule);
-    return _super.apply(this, arguments);
-  }
-
-  (0, _createClass2.default)(BetaTesterModule, [{
-    key: "onInit",
-    value: function onInit() {
-      elementorModules.ViewModule.prototype.onInit.apply(this, arguments);
-      this.showLayout(false);
-    }
-  }, {
-    key: "showLayout",
-    value: function showLayout() {
-      var always = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-      if (!always && (!elementorAdmin.config.beta_tester.option_enabled || elementorAdmin.config.beta_tester.signup_dismissed || '#tab-fontawesome4_migration' === location.hash)) {
-        return;
-      }
-
-      this.layout = new _layout.default();
-      this.layout.showModal();
-    }
-  }, {
-    key: "getDefaultSettings",
-    value: function getDefaultSettings() {
-      return {
-        selectors: {
-          betaTesterFirstToKnow: '#beta-tester-first-to-know'
-        }
-      };
-    }
-  }, {
-    key: "getDefaultElements",
-    value: function getDefaultElements() {
-      var elements = {};
-      var selectors = this.getSettings('selectors');
-      elements.$betaTesterFirstToKnow = jQuery(selectors.betaTesterFirstToKnow);
-      return elements;
-    }
-  }, {
-    key: "bindEvents",
-    value: function bindEvents() {
-      var elements = this.elements;
-      elements.$betaTesterFirstToKnow.on('click', this.showLayout.bind(this));
-    }
-  }]);
-  return BetaTesterModule;
-}(elementorModules.ViewModule);
-
-jQuery(function () {
-  window.elementorBetaTester = new BetaTesterModule();
-});
-
-/***/ }),
-
-/***/ 788:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-var _Object$defineProperty = __webpack_require__(1);
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = void 0;
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(3));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(4));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(5));
-
-var _view = _interopRequireDefault(__webpack_require__(789));
-
-var BetaTesterLayout = /*#__PURE__*/function (_elementorModules$com) {
-  (0, _inherits2.default)(BetaTesterLayout, _elementorModules$com);
-
-  var _super = (0, _createSuper2.default)(BetaTesterLayout);
-
-  function BetaTesterLayout() {
-    (0, _classCallCheck2.default)(this, BetaTesterLayout);
-    return _super.apply(this, arguments);
-  }
-
-  (0, _createClass2.default)(BetaTesterLayout, [{
-    key: "ui",
-    value: function ui() {
-      return {
-        closeModal: '.elementor-templates-modal__header__close',
-        dontShowAgain: '.elementor-beta-tester-do-not-show-again'
-      };
-    }
-  }, {
-    key: "events",
-    value: function events() {
-      return {
-        'click @ui.closeModal': this.onCloseModalClick,
-        'click @ui.dontShowAgain': this.onDontShowAgainClick
-      };
-    }
-  }, {
-    key: "getModalOptions",
-    value: function getModalOptions() {
-      return {
-        id: 'elementor-beta-tester-modal',
-        hide: {
-          onBackgroundClick: false
-        }
-      };
-    }
-  }, {
-    key: "getLogoOptions",
-    value: function getLogoOptions() {
-      return {
-        title: elementorAdmin.translate('beta_tester_sign_up')
-      };
-    }
-  }, {
-    key: "initialize",
-    value: function initialize() {
-      elementorModules.common.views.modal.Layout.prototype.initialize.apply(this, arguments);
-      this.showLogo();
-      this.showContentView();
-      var doNotShowAgain = elementorAdmin.translate('do_not_show_again');
-      this.modalHeader.currentView.ui.closeModal.after(jQuery('<div>', {
-        class: 'elementor-beta-tester-do-not-show-again'
-      }).text(doNotShowAgain));
-    }
-  }, {
-    key: "showContentView",
-    value: function showContentView() {
-      this.modalContent.show(new _view.default());
-    }
-  }, {
-    key: "onDontShowAgainClick",
-    value: function onDontShowAgainClick() {
-      this.hideModal();
-      this.onCloseModalClick();
-    }
-  }, {
-    key: "onCloseModalClick",
-    value: function onCloseModalClick() {
-      elementorCommon.ajax.addRequest('introduction_viewed', {
-        data: {
-          introductionKey: elementorAdmin.config.beta_tester.beta_tester_signup
-        }
-      });
-    }
-  }]);
-  return BetaTesterLayout;
-}(elementorModules.common.views.modal.Layout);
-
-exports.default = BetaTesterLayout;
-
-/***/ }),
-
-/***/ 789:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(0);
-
-var _Object$defineProperty = __webpack_require__(1);
-
-_Object$defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = void 0;
-
-var _classCallCheck2 = _interopRequireDefault(__webpack_require__(2));
-
-var _createClass2 = _interopRequireDefault(__webpack_require__(3));
-
-var _inherits2 = _interopRequireDefault(__webpack_require__(4));
-
-var _createSuper2 = _interopRequireDefault(__webpack_require__(5));
-
-var BetaTesterView = /*#__PURE__*/function (_Marionette$ItemView) {
-  (0, _inherits2.default)(BetaTesterView, _Marionette$ItemView);
-
-  var _super = (0, _createSuper2.default)(BetaTesterView);
-
-  function BetaTesterView() {
-    var _this;
-
-    (0, _classCallCheck2.default)(this, BetaTesterView);
-    _this = _super.call(this);
-    _this.id = 'elementor-beta-tester-dialog-content';
-    _this.template = '#tmpl-elementor-beta-tester';
-    return _this;
-  }
-
-  (0, _createClass2.default)(BetaTesterView, [{
-    key: "ui",
-    value: function ui() {
-      return {
-        betaForm: '#elementor-beta-tester-form',
-        betaEmail: '#elementor-beta-tester-form__email',
-        betaButton: '#elementor-beta-tester-form__submit'
-      };
-    }
-  }, {
-    key: "events",
-    value: function events() {
-      return {
-        'submit @ui.betaForm': 'onBetaFormSubmit'
-      };
-    }
-  }, {
-    key: "onBetaFormSubmit",
-    value: function onBetaFormSubmit(event) {
-      event.preventDefault();
-      var email = this.ui.betaEmail.val();
-      this.ui.betaButton.addClass('elementor-button-state');
-      elementorCommon.ajax.addRequest('beta_tester_signup', {
-        data: {
-          betaTesterEmail: email
-        } // Do not wait for response.
-
-      });
-      elementorBetaTester.layout.hideModal();
-    }
-  }, {
-    key: "onRender",
-    value: function onRender() {}
-  }]);
-  return BetaTesterView;
-}(Marionette.ItemView);
-
-exports.default = BetaTesterView;
-
-/***/ }),
-
 /***/ 8:
 /***/ (function(module, exports) {
 
@@ -2278,4 +2386,4 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=beta-tester.js.map
+//# sourceMappingURL=admin-bar.js.map
