@@ -1476,12 +1476,9 @@ ul.elementor-icon-list-items.elementor-inline-items {
   --divider-pattern-height: 24px;
   --divider-pattern-size: 20px;
   --divider-pattern-url: none;
-  --divider-pattern-repeat: repeat-x;
-  /* Backwards compatibility */ }
-  .elementor-widget-divider:not(.elementor-widget-divider--view-line_text):not(.elementor-widget-divider--view-line_icon):not(.elementor-widget-divider--separator-type-pattern) .elementor-divider-separator {
-    display: inline-block; }
+  --divider-pattern-repeat: repeat-x; }
   .elementor-widget-divider .elementor-divider {
-    line-height: 0; }
+    display: flex; }
     .elementor-widget-divider .elementor-divider__text {
       font-size: 15px;
       line-height: 1;

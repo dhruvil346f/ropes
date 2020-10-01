@@ -1,0 +1,126 @@
+# Copyright (C) 2020 Firefly Themes
+msgid ""
+msgstr ""
+"Project-Id-Version: Versatile Business Dark 1.0.2\n"
+"Report-Msgid-Bugs-To: https://fireflythemes.com/contact/\n"
+"POT-Creation-Date: 2020-09-19 03:14:39+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Firefly Themes <info@fireflythemes.com>\n"
+"Language-Team: Firefly Themes <info@fireflythemes.com>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:45
+msgid "Associate Logo"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:55
+msgid "Visible On"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:66
+msgid "Section Top Sub-title"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:77
+msgid "Section Title"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:88
+msgid "Section Subtitle"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:98
+msgid "Number"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:99
+msgid "Please refresh the customizer page once the number is changed."
+msgstr ""
+
+#: inc/customizer/associate-logo.php:120
+msgid "Select Page"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:150
+msgid "Colors"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:181
+msgid "Section Background Color"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:188 inc/customizer/associate-logo.php:216
+msgid "Title Color"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:195
+msgid "Title Divider Color"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:202
+msgid "Sub Title Color"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:209
+msgid "Text Color"
+msgstr ""
+
+#: inc/customizer/associate-logo.php:223
+msgid "Title Link Hover Color"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Versatile Business Dark"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://fireflythemes.com/themes/versatile-business-dark/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Versatile Business Dark is our new Multipurpose child theme. The parent "
+"theme of this theme is our first WordPress theme Versatile Business. "
+"Versatile Business was appreciated by users so we made child theme "
+"Versatile Business Dark which inherits functionality and feature of its "
+"parent theme with an attractive, dark design. We have made few design "
+"changes in sections like slider, featured content and what we do and added "
+"a new section “Associate Logo”. Versatile Business Dark is also a "
+"Multipurpose WordPress theme which can be used in any kind if business. It "
+"has a dark bold look which will give a unique modern looking website. With "
+"customizable features and smooth design, it will attract new visitors too. "
+"On top of that, the theme has been optimized to load fast and is fully "
+"responsive, you can also import demo content with plugin one click demo "
+"importer. If you want more flexible functionality you can also choose to "
+"upgrade to premium version of the theme. Visit "
+"https://fireflythemes.com/support for support, "
+"https://fireflythemes.com/documentation/versatile-business for theme "
+"documentation and https://fireflythemes.com/demo/versatile-business for "
+"demo."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "FireFly Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://fireflythemes.com/"
+msgstr ""

@@ -1,0 +1,51 @@
+
+---Downloaded files---
+The import files for: Theme Demo Content were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://localhost/ropes
+Data file = C:\wamp64\www\ropes/wp-content/themes/corporate-key/demo/content.xml
+Widget file = C:\wamp64\www\ropes/wp-content/themes/corporate-key/demo/widget.wie
+Customizer file = C:\wamp64\www\ropes/wp-content/themes/corporate-key/demo/customizer.dat
+Redux files:
+not defined!
+
+---Importing widgets---
+Primary Sidebar : 
+
+Search - No Title - Widget already exists
+Recent Posts - No Title - Widget already exists
+Archives - No Title - Widget already exists
+Categories - No Title - Widget already exists
+
+Front Page Widget Area : 
+
+CK: Services - Our Key Features - Widget already exists
+CK: Latest News - Latest News - Widget already exists
+CK: Call To Action - Premium and free products at its finest - Widget already exists
+CK: Featured Page - About Us - Widget already exists
+CK: Latest News - Weekly News - Widget already exists
+
+Footer 1 : 
+
+Custom HTML - About Us - Imported
+
+Footer 2 : 
+
+Categories - No Title - Widget already exists
+
+Footer 3 : 
+
+Categories - No Title - Imported
+
+Footer 4 : 
+
+CK: Social - Social Links - Widget already exists
+
+
+
+---Importing customizer settings---
+Customizer settings import finished!
+
+---pt-ocdi/after_import---
+

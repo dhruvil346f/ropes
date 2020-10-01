@@ -1,0 +1,198 @@
+/*
+Theme Name: Versatile Business Dark
+Theme URI: https://fireflythemes.com/themes/versatile-business-dark/
+Author: FireFly Themes
+Author URI: https://fireflythemes.com/
+Description: Versatile Business Dark is our new Multipurpose child theme. The parent theme of this theme is our first WordPress theme Versatile Business. Versatile Business was appreciated by users so we made child theme Versatile Business Dark which inherits functionality and feature of its parent theme with an attractive, dark design. We have made few design changes in sections like slider, featured content and what we do and added a new section “Associate Logo”. Versatile Business Dark is also a Multipurpose WordPress theme which can be used in any kind if business. It has a dark bold look which will give a unique modern looking website. With customizable features and smooth design, it will attract new visitors too. On top of that, the theme has been optimized to load fast and is fully responsive, you can also import demo content with plugin one click demo importer. If you want more flexible functionality you can also choose to upgrade to premium version of the theme. Visit https://fireflythemes.com/support for support, https://fireflythemes.com/documentation/versatile-business for theme documentation and https://fireflythemes.com/demo/versatile-business for demo.
+Version: 1.0.3
+Requires at least: 5.2
+Tested up to: 5.5
+Requires PHP: 5.6
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/license-list.html#GNUGPLv3
+Text Domain: versatile-business-dark
+Template: versatile-business
+Tags: blog, news, portfolio, grid-layout, one-column, two-columns, right-sidebar, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks
+
+Versatile Business Dark Theme WordPress Theme, Copyright 2020 FireFly Themes
+Versatile Business Dark Theme is distributed under the terms of the GNU GPL
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+/**
+ * Dark Color Scheme
+ */
+
+/**
+ * Dark Color Scheme
+ */
+
+#search-container, #search-container:after, .archive .hentry-inner, .blog .hentry-inner, .dark-top-header, .hentry-inner, .sidebar .widget, .single-content-wraper,#breadcrumb,#respond {
+    background-color: #32373c;
+}
+textarea#comment, textarea {
+    background: transparent;
+    color: #fff;
+}
+.search-form input.search-field {
+    background: transparent;
+}
+body, #masthead.sticky-enabled.sticky-header, .sticky-enabled.sticky-header, .header-seven .site-branding:after,#masthead {
+    background: #23282d;
+}
+#main-nav .main-navigation ul li a,
+#main-nav .main-navigation ul li a:visited,
+.cart-contents a,
+.cart-contents a:visited,
+#search-toggle,
+.section .section-top-subtitle,body, button, input, select, optgroup, textarea {
+    color: #cacaca;
+}
+.main-navigation ul ul, .main-navigation ul ul:before {
+    background: #27262a;
+}
+.section:nth-child(odd) {
+    background-color: #32373c;
+}
+.section:nth-child(even) {
+    background-color: #23282d;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #f9f9f9;
+}
+#masthead.sticky-enabled.sticky-header, .sticky-enabled.sticky-header {
+    background: #27262a;
+}
+.social-nav ul li a:before {
+    color: #fff;
+}
+
+.sidebar ul li a, .sidebar ul li a:visited {
+    color: #ebebeb;
+}
+.section-wwd .wwd-block-inner,
+.section-teams .team-text-wrap,
+.section-testimonial .testimonial-summary,
+.section-testimonial .testimonial-summary::after,
+.section-latest-posts .latest-posts-text-content,
+.item-inner-wrapper .portfolio-content,
+.section-contact,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,.style-two .latest-posts-text-content-wrapper,.inner-block-shadow {
+    background-color: #100d1b;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+    color: #ffffff;
+    text-decoration: inherit;
+}
+a:visited, a,.entry-title a, .entry-title a:visited {
+    color: #ffffff;
+}
+#breadcrumb {
+    color: #3368c6;
+}#breadcrumb li a, .bcn-breadctumb > span a {
+    color: #fff;
+}
+#breadcrumb li {
+    border-right: 1px solid #dddddd3d;
+
+}
+#hero-slider.overlay-enabled article:before,.section.overlay-enabled:after,#custom-header::after {
+    opacity: 0.5;
+
+}
+.style-two .wwd-block-item a.wwd-icon {
+	background:none;
+}
+.search-form .search-submit:hover, .search-form .search-submit:focus, .search-form .search-submit:active,.search-form .search-submit {
+    background: none;
+    color: #fff;
+}
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="url"], .wpcf7 input[type="password"], .wpcf7 input[type="number"], .wpcf7 input[type="tel"], .wpcf7 input[type="range"], .wpcf7 input[type="date"], .wpcf7 input[type="month"], .wpcf7 input[type="week"], .wpcf7 input[type="time"], .wpcf7 input[type="datetime"], .wpcf7 input[type="datetime-local"], .wpcf7 input[type="color"], .wpcf7 textarea {
+    padding: 8px 15px;
+    border-color: #b9b9b9;
+    background: transparent;
+    color: #fff;
+}
+.woocommerce ul.products li.product .price {
+    color: #ffffff;
+}
+.woocommerce table.shop_table {
+    border: 1px solid rgb(255 255 255 / 38%);
+}
+.woocommerce table.shop_table td {
+    border-top: 1px solid rgb(255 255 255 / 28%);
+
+}input#coupon_code {
+    margin: 10px;
+    width: 180px!important;
+}
+a:hover, a:focus, a:active {
+    color: #3368c6;
+}
+.site-title a, .site-title a:visited {
+    color: #fff;
+}
+
+.site-title a, .site-title a:visited {
+    color: #fff;
+}
+.site-title a:hover, .site-title a:focus,
+.site-title a:active {
+	color:#3368c6;
+}
+.nav-inner-wrapper.nav-black-bg {
+    background: #313132;
+}
+#quick-contact.layout-two a, #quick-contact.layout-two a:visited, #quick-contact.layout-two, #quick-contact.layout-two li {
+    color: #e1e1e1;
+}
+#quick-contact.layout-two a:active, #quick-contact.layout-two a:hover, #quick-contact.layout-two a:focus {
+    color: #3368c6;
+}
+.header-five #masthead .site-header-main {
+    background: #171717;
+
+}
+#main-nav .main-navigation ul li a:hover, #main-nav .main-navigation ul li a:focus, #main-nav .main-navigation ul li a:active,.widget .tagcloud a {
+    color: #fff;
+}
+textarea:hover, textarea:focus, textarea:active {
+    border: 1px solid #3368c6;
+}
+@media screen and (min-width: 910px){
+.main-navigation ul li.current-menu-item > a, .main-navigation ul li.current-menu-ancestor > a, .main-navigation ul li.current_page_item > a, .main-navigation ul li:hover > a, .main-navigation ul li:hover > a, .main-navigation ul li:hover > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current-menu-item > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current-menu-ancestor > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current_page_item > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a {
+    color: #3368c6;
+}
+}
+@media screen and (max-width: 909px){
+.site-primary-menu {
+    background: #27262a;
+
+}
+#header-top-toggle {
+    color: #fff;
+}
+.site-top-header-mobile,#site-top-header-mobile-container {
+    background: #222;
+}
+.dropdown-toggle {
+    color: #fff;
+}
+#quick-contact a, #quick-contact a:visited, #quick-contact, #quick-contact li {
+    display: inline-block;
+    color: #ffffff;
+}
+#top-header #site-top-header-mobile-container .social-nav ul li a:before {
+    color: #f5f5f5;
+}
+}
+
+
+.ff-button, .ff-button:visited, button, a.button, .ff-button.button-secondary:hover, .ff-button.button-secondary:active, .ff-button.button-secondary:focus, input[type="button"], input[type="reset"], input[type="submit"], .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #hero-section .featured-info a.more-link, #hero-section .featured-info a.more-link:visited, #promotion-section a.more-link, #promotion-section a.more-link:visited, a.scrollup, a.scrollup:visited, .footer-widget-area .widget-title:after, .section.dark-background, .section .section-title-wrap span.divider, #main-nav .main-navigation ul ul li a:hover, #main-nav .main-navigation ul ul li a:focus, #main-nav .main-navigation ul ul li a:active, .header-seven .site-branding, #hero-slider .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active, .cart-contents p.woocommerce-mini-cart__buttons.buttons .button, #main-nav .main-navigation ul ul li.current_page_item > a, .sidebar .widget-title:after, .section-latest-posts .new-cat a, .swiper-carousel-enabled .swiper-pagination-bullet-active, .swiper-carousel-enabled .swiper-pagination-bullet:hover, .swiper-carousel-enabled .swiper-pagination-bullet:focus, .swiper-carousel-enabled .swiper-pagination-bullet:active, a.comment-reply-link, .section-portfolio.style-two .item-inner-wrapper, .nav-inner-wrapper.nav-color-bg, .nav-inner-wrapper.nav-color-bg.sticky-enabled.sticky-header, #hero-slider a.more-link, #hero-slider a.more-link:visited {
+    background-color: #dd3333;
+}
+a, a:visited, .section-portfolio .portfolio-content h3 a:hover, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:hover, h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active, .main-navigation ul li.current-menu-item > a, .main-navigation ul li.current-menu-ancestor > a, .main-navigation ul li:hover > a, .main-navigation ul li:hover > a, .main-navigation ul li:hover > a, #search-toggle:hover, #search-toggle:focus, #breadcrumb li a:hover, #breadcrumb li a:focus, #breadcrumb li a:active, #breadcrumb, #search-toggle:active, .entry-title a:hover, .entry-title a:focus, .entry-title a:active, .entry-meta a:hover, .entry-meta a:focus, .entry-meta a:active, .sidebar ul li a:hover, .sidebar ul li a:focus, .sidebar ul li a:active, .comment-metadata > a:hover, .comment-metadata > a:focus, .comment-metadata > a:active, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current-menu-item > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current-menu-ancestor > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li.current_page_item > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a, .nav-inner-wrapper.nav-black-bg .main-navigation ul li:hover > a, #quick-contact.layout-two li:before, .site-title a:hover, .site-title a:focus, .site-title a:active {
+    color: #dd3333;
+}
