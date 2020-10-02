@@ -11,20 +11,21 @@
 
 ?>
 				</div><!-- .row -->
-			</div><!-- .container -->
+			</div>
+<!-- .container -->
 		</div><!-- #content -->
 
 		<?php get_template_part( 'template-parts/testimonial/testimonial' ); ?>
 		
 		<footer id="colophon" class="site-footer">
 			<?php get_template_part( 'template-parts/footer/footer', 'widget' ); ?>
-
-			<?php get_template_part( 'template-parts/footer/site-info' ); ?>
+              <?php get_template_part( 'template-parts/footer/site-info' ); ?>
+			
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
-	<div id="scrollup">
-		<a title="<?php echo esc_attr( 'Go to Top', 'versatile-business' ); ?>" class="scrollup" href="#"><i class="fas fa-angle-up"></i></a>
+	<div id="scrollup"><a title="<?php echo esc_attr( 'Go to Top', 'versatile-business' ); ?>" class="scrollup" href="#"><i class="fas fa-angle-up"></i></a>
+		
 	</div>
 	
 	<?php wp_footer(); ?>
